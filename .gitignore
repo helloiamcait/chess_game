@@ -5,9 +5,11 @@ venv/
 __pycache__/
 *.pyc
 
-# Optional: Ignore OS and editor files
+# Ignore OS and editor files
 .DS_Store
 *.log
+flask_chess_cheatsheet.txt
 
 # Ignore environment variables if you add them
 .env
+.flaskenv

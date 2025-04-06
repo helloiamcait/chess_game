@@ -1,6 +1,13 @@
+let selected = null;
+let fogMode = false; // track fog mode state
+
 fetchAndRenderBoard();
 
-let selected = null;
+const fogToggle = document.getElementById("fog-toggle");
+fogToggle.addEventListener("change", () => {
+  fogMode = fogToggle.checked;
+  fetchAndRenderBoard();
+});
 
 const pieceMap = {
   K: "♔",
@@ -21,7 +28,7 @@ const pieceMap = {
 
 function loadBoard(board) {
   const chessboard = document.getElementById("chessboard");
-  chessboard.innerHTML = ""; // Clear board
+  chessboard.innerHTML = "";
 
   for (let row = 0; row < 8; row++) {
     for (let col = 0; col < 8; col++) {
@@ -52,9 +59,20 @@ function handleClick(e) {
       body: JSON.stringify({
         source: selected,
         target: { row, col },
+        fog: fogMode, // send fog mode to backend
       }),
     })
-    fetchAndRenderBoard();
+      .then((res) => res.json())
+      .then((data) => {
+        loadBoard(data.board);
+        selected = null;
+
+        if (data.game_state !== "UNFINISHED") {
+          overlayText.innerText =
+            data.game_state === "WHITE_WON" ? "White Wins! ♚" : "Black Wins! ♔";
+          overlay.style.display = "flex";
+        }
+      });
   }
 }
 
@@ -62,15 +80,16 @@ const overlay = document.getElementById("overlay");
 const overlayText = document.getElementById("overlay-text");
 
 function fetchAndRenderBoard() {
-  fetch("/get_board")
+  const perspective = fogMode ? "current" : "audience";
+  fetch(`/get_board?perspective=${perspective}`)
     .then((res) => res.json())
     .then((data) => {
-      loadBoard(data.board, data.turn);
+      loadBoard(data.board);
       selected = null;
 
       if (data.game_state !== "UNFINISHED") {
         overlayText.innerText =
-          data.game_state === "WHITE_WON" ? "White Wins! ♚ " : "Black Wins! ♔ ";
+          data.game_state === "WHITE_WON" ? "White Wins! ♚" : "Black Wins! ♔";
         overlay.style.display = "flex";
       }
     });
