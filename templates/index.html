@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Chess</h1>
+    <div id="chessboard"></div>
+    <div id="overlay">
+        <div id="overlay-text"></div>
+        <button onclick="resetGame()">Play Again</button>
+    </div>
+    <script src="{{ url_for('static', filename='chess.js') }}"></script>
+</body>
+
+</html>
