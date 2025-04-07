@@ -10,11 +10,10 @@ A web-based chess game built with Flask and JavaScript featuring an optional **F
 
 ## 📸 Screenshots
 
-### Normal Mode  
-![Normal Mode Screenshot](docs/screenshot-normal.png)
-
-### Fog of War Mode  
-![Fog of War Screenshot](docs/screenshot-fog.png)
+<p align="center">
+  <img src="docs/screenshot-normal.png" alt="Normal Mode" width="45%" style="margin-right: 10px;">
+  <img src="docs/screenshot-fog.png" alt="Fog of War Mode" width="45%">
+</p>
 
 ---
 
