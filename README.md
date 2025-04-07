@@ -8,6 +8,16 @@ A web-based chess game built with Flask and JavaScript featuring an optional **F
 
 ---
 
+## 📸 Screenshots
+
+### Normal Mode  
+![Normal Mode Screenshot](docs/screenshot-normal.png)
+
+### Fog of War Mode  
+![Fog of War Screenshot](docs/screenshot-fog.png)
+
+---
+
 ## 🎮 Features
 
 - Classic chess gameplay with basic move logic
