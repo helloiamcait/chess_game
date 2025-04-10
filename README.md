@@ -126,7 +126,7 @@ MIT License. Use freely, modify wildly, and don’t forget to tag me if you impr
 
 ---
 
-## 🙌 Author
+## ✍️ Author
 
 ### Cait
 Built with love, curiosity, and Unicode chess pieces ♞
