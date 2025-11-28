@@ -4,7 +4,7 @@
 [![Flask](https://img.shields.io/badge/Flask-2.x-lightgrey.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A web-based chess game built with Flask and JavaScript featuring an optional **Fog of War** mode, where players can only see their own pieces and enemy pieces they are able to capture. Perfect for testing both your tactics and intuition.
+A web-based chess game featuring an optional **Fog of War** mode, where players can only see their own pieces and enemy pieces they are able to capture. Perfect for testing both your tactics and intuition.
 
 ---
 
